@@ -6,11 +6,14 @@ btn.addEventListener('click', () => {
     model.style.display = 'block'
 })
 
-function check(form){
-    if (form.username.value == "myusername" && form.password.value == "mypassword") {
-        window.open('target.html')
+function validateForm () {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    if ( username.length > 3 && password.length > 6) {
+        window.location.href = "./user.html";
     } else {
-        alert("Enter valid Username/Password")
+        alert("Enter atleast 4 letters for valid name & password must be atleast 6 characters")
     }
 }
+
 
